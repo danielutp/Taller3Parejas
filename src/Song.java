@@ -18,7 +18,7 @@ abstract class Song {
 	private int id;
 	
 	/**
-	 * Atributo tipo date que representa la fecha del disco.
+	 * Atributo tipo date que representa la fecha de la cancion.
 	 */
 	public Date date;
 	
