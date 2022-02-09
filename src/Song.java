@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Clase abstracta que representa una cancion, sus atributos y algunos metodos.
@@ -17,14 +18,11 @@ abstract class Song {
 	private int id;
 	
 	/**
-<<<<<<< Updated upstream
-=======
-	 * Atributo tipo date que representa la fecha del cancion.
+	 * Atributo tipo date que representa la fecha de la cancion.
 	 */
 	public Date date;
 	
 	/**
->>>>>>> Stashed changes
 	 * Atributo tipo flotante que representa la duracion de la cancion;
 	 */
 	public float duration;
@@ -55,15 +53,17 @@ abstract class Song {
 	 * Metodo constructor que permite instanciar la clase inicializando cada uno de sus atributos.
 	 * @param title Titulo de la cancion.
 	 * @param id Id de la cancion.
+	 * @param date Fecha de la cancion.
 	 * @param duration Duracion de la cancion.
 	 * @param genre Genero de la cancion.
 	 * @param cover Caratula de la cancion.
 	 * @param description Breve descripcion de la cancion.
 	 */
-	public Song(String title, int id, float duration, String genre, String cover, String description) {
+	public Song(String title, int id, Date date, float duration, String genre, String cover, String description) {
 		super();
 		this.title = title;
 		this.id = id;
+		this.date = date;
 		this.duration = duration;
 		this.genre = genre;
 		this.cover = cover;
@@ -100,6 +100,22 @@ abstract class Song {
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	/**
+	 * Metodo accesor que permote obtener la fecha de la instancia actual de cancion.
+	 * @return Fecha de la cancion.
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * Metodo accesor que permite modificar la fecha de la instancia actual de cancion.
+	 * @param date Fecha de la cancion.
+	 */
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	/**
