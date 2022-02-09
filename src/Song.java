@@ -17,6 +17,14 @@ abstract class Song {
 	private int id;
 	
 	/**
+<<<<<<< Updated upstream
+=======
+	 * Atributo tipo date que representa la fecha del cancion.
+	 */
+	public Date date;
+	
+	/**
+>>>>>>> Stashed changes
 	 * Atributo tipo flotante que representa la duracion de la cancion;
 	 */
 	public float duration;
