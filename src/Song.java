@@ -1,7 +1,12 @@
+import java.util.Locale;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
 /**
  * Clase que representa una cancion, sus atributos y algunos metodos para acceder y modificar los mismos.
  * @author juanpcs
- *
+ * @version 1.0.0  *
  */
 public class Song {
 	
@@ -18,7 +23,7 @@ public class Song {
 	/**
 	 * Atributo tipo String que representa la fecha de la cancion.
 	 */
-	String date;
+	Date date;
 	
 	/**
 	 * Atributo tipo flotante que representa la duracion de la cancion.
@@ -49,12 +54,12 @@ public class Song {
 	 * @param gender Genero de la cancion.
 	 * @param portRait Portada de la cancion.
 	 * @param description Descripcion de la cancion.
+	 * @throws ParseException 
 	 */
-	public Song(String title, int id, String date, float last, String gender, String portRait, String description) {
-		super();
-		this.title = title;
+	public Song(String title, int id, String date, float last, String gender, String portRait, String description) throws ParseException {    
+        this.title = title;
 		this.id = id;
-		this.date = date;
+		this.date = stringToDate(date);
 		this.last = last;
 		this.gender = gender;
 		this.portRait = portRait;
@@ -97,7 +102,7 @@ public class Song {
 	 * Metodo accesor que permite obtener la fecha de la instancia actual de cancion.
 	 * @return Fecha de la cancion.
 	 */
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 	
@@ -105,7 +110,7 @@ public class Song {
 	 * Metodo accesor que permite modificar la fecha de la instancia actual de cancion.
 	 * @param date Fecha de la cancion.
 	 */
-	public void setDate(String date) {
+	public void setDate(Date  date) {
 		this.date = date;
 	}
 	
@@ -171,6 +176,21 @@ public class Song {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	/**
+	 * Metodo para convertir la variable date de tipo String a Date
+	 * @param stringdate
+	 * @return date convertida en tipo Date
+	 * @throws ParseException
+	 */
+	private Date stringToDate(String stringdate) throws ParseException {
+		Date date = new Date();
+		String pattern = "yyyy/MM/dd"; 
+		SimpleDateFormat format = new SimpleDateFormat(pattern, Locale.ENGLISH);
+		date = format.parse(stringdate);
+		return date;
+		
 	}
 
 }

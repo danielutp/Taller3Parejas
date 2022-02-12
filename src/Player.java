@@ -1,9 +1,10 @@
+import java.text.ParseException;
 
 /**
  *Esta es una clase que representa un reproductor que se encarga de reproducir una cancion
  *o implementa un metodo para reproducir una lista de canciones. 
  * @author juanpcs
- *
+ * @version 1.0.0  *
  */
 public abstract class Player {
 	
@@ -14,8 +15,9 @@ public abstract class Player {
     
     /**
      * Metodo contructor que permite instanciar player inicializando su atributo.
+     * @throws ParseException 
      */
-    public Player() {
+    public Player() throws ParseException {
         this.songLibrary = new SongLibrary();
     }
 
@@ -33,7 +35,4 @@ public abstract class Player {
             player(song);            
         }
     }
-    
-		
-
 }
